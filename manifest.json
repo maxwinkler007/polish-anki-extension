@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Polish Word to Anki",
+  "version": "1.0.0",
+  "description": "Select a Polish word on any page, generate an Anki flashcard via Gemini, and save it to Anki.",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": [
+    "http://127.0.0.1:8765/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://sjp.pwn.pl/*",
+    "https://pl.wikipedia.org/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content-script.js"],
+      "css": ["styles.css"]
+    }
+  ],
+  "action": {
+    "default_popup": "options.html",
+    "default_title": "Polish Anki settings"
+  },
+  "options_page": "options.html"
+}

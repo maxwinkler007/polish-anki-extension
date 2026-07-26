@@ -1,0 +1,74 @@
+.pa-button {
+  position: absolute;
+  z-index: 999999;
+  background: #2b7cff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.pa-panel {
+  position: absolute;
+  z-index: 999999;
+  width: 340px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  font-family: system-ui, sans-serif;
+  font-size: 13px;
+  color: #222;
+}
+
+.pa-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.pa-close {
+  cursor: pointer;
+  color: #888;
+}
+
+.pa-status {
+  min-height: 16px;
+  color: #555;
+  margin-bottom: 6px;
+  font-style: italic;
+}
+
+.pa-panel label {
+  display: block;
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+.pa-panel textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 12px;
+  margin-top: 2px;
+  resize: vertical;
+}
+
+.pa-actions {
+  margin-top: 8px;
+  text-align: right;
+}
+
+.pa-save {
+  background: #2b7cff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
