@@ -20,6 +20,12 @@ function removePanel() {
   }
 }
 
+function escapeHtml(str) {
+  const div = document.createElement("div");
+  div.textContent = str;
+  return div.innerHTML;
+}
+
 document.addEventListener("mouseup", (e) => {
   // ignore clicks inside our own UI
   if (e.target.closest(".pa-button") || e.target.closest(".pa-panel")) return;
@@ -86,17 +92,16 @@ function buildPanel(word, rect) {
   panel.style.left = `${window.scrollX + rect.left}px`;
 
   panel.innerHTML = `
-    <div class="pa-header">Karte: <strong>${word}</strong> <span class="pa-close">✕</span></div>
-    <div class="pa-status"></div>
-    <label>Front</label>
-    <textarea class="pa-front" rows="5"></textarea>
-    <label>Back</label>
-    <textarea class="pa-back" rows="3"></textarea>
-    <div class="pa-actions">
-      <button class="pa-save">💾 In Anki speichern</button>
-    </div>
-  `;
-
+  <div class="pa-header">Karte: <strong>${escapeHtml(word)}</strong> <span class="pa-close">✕</span></div>
+  <div class="pa-status"></div>
+  <label>Front</label>
+  <textarea class="pa-front" rows="5"></textarea>
+  <label>Back</label>
+  <textarea class="pa-back" rows="3"></textarea>
+  <div class="pa-actions">
+    <button class="pa-save">💾 In Anki speichern</button>
+  </div>
+`;
   panel.querySelector(".pa-close").addEventListener("click", removePanel);
 
   panel.querySelector(".pa-save").addEventListener("click", () => {
